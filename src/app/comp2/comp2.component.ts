@@ -11,7 +11,11 @@ export class Comp2Component implements OnInit {
   constructor(private behav: BehavService) { }
 
   ngOnInit(): void {
-    
+    this.behav.currentData.subscribe({
+      next: data => {
+        this.data = data;
+      }
+    })
   }
 
 }
